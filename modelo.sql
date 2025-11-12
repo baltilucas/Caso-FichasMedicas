@@ -1,4 +1,3 @@
--- Tabla de nacionalidades
 CREATE TABLE nacionalidad (
     idNacionalidad INT PRIMARY KEY AUTO_INCREMENT,
     pais VARCHAR(100)
@@ -12,21 +11,20 @@ VALUES
     ('VENEZUELA'),
     ('ARGENTINA');
 
--- corregido "ARGENITNA"
--- Tabla de tipos de previsión
+
 CREATE TABLE tipoprevision (
     idTipoPrevision INT PRIMARY KEY AUTO_INCREMENT,
     tipoPrevision VARCHAR(50)
 );
 
--- Debes especificar la columna, ya que tipoprevision tiene un campo autoincremental
+
 INSERT INTO
     tipoprevision (tipoPrevision)
 VALUES
     ('FONASA'),
     ('ISAPRE');
 
--- Tabla de previsión
+
 CREATE TABLE prevision (
     idPrevision INT PRIMARY KEY AUTO_INCREMENT,
     nombrePrevision VARCHAR(60),
@@ -34,7 +32,6 @@ CREATE TABLE prevision (
     FOREIGN KEY (idTipoPrevision) REFERENCES tipoprevision(idTipoPrevision)
 );
 
--- Corregido: se debe incluir idTipoPrevision en el INSERT
 INSERT INTO
     prevision (nombrePrevision, idTipoPrevision)
 VALUES
@@ -45,7 +42,6 @@ VALUES
     ('CRUZ BLANCA', 2),
     ('ESSENTIAL', 2);
 
--- 0 será femenino, 1 masculino, 3 otro
 CREATE TABLE paciente (
     idPaciente INT PRIMARY KEY AUTO_INCREMENT,
     nombrePaciente VARCHAR(50) NOT NULL,
@@ -69,7 +65,6 @@ CREATE TABLE paciente (
 
 CREATE UNIQUE INDEX idx_rut ON paciente(rut);
 
--- Insert de ejemplo corregido
 INSERT INTO
     paciente (
         nombrePaciente,
