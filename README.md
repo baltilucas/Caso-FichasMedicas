@@ -42,3 +42,12 @@ WHERE condition;
 Borra según condición
 
 ## Update
+
+Sintaxis update:
+
+```SQL
+UPDATE nombreTabla
+set atrr1 = valor1,
+    attr2 = valor2,
+WHERE condition;
+```
