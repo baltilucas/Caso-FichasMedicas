@@ -1,3 +1,4 @@
+CREATE VIEW alergias_pacientes AS
 SELECT
     c1.nombrePaciente,
     c1.apellidoPaciente,
